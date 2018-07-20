@@ -1,5 +1,7 @@
 FROM debian:stretch
 ADD ./version.txt .
+ENV REF ${RELEASE}
+ENV NXF_VERSION="master"
 RUN apt update && \
     apt -y install openjdk-8-jre-headless curl unzip
 RUN curl $(printf ' -O http://nxfilter.org/download/nxfilter-%s.zip' $(cat version.txt)) && \
