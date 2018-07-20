@@ -1,0 +1,1 @@
+sed -i "s|^ENV NXF_VERSION.*$|ENV NXF_VERSION=\"${SOURCE_BRANCH}\"|" Dockerfile
