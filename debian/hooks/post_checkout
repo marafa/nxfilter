@@ -1,4 +1,4 @@
 #!/bin/bash
 
-VERSION=${SOURCE_BRANCH}|awk -F '-' '{print $2}'
+VERSION=${SOURCE_BRANCH}|awk -F '-' '{print $1}'
 sed -i "s|^ENV NXF_VERSION.*$|ENV NXF_VERSION=\"$VERSION\"|" Dockerfile
