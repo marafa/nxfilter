@@ -1,7 +1,15 @@
 FROM alpine:3.6
 ADD ./version.txt .
+
+ARG VERSION
+ARG VCS_URL
+ARG VCS_REF
+ARG BUILD_DATE
+
 LABEL org.label-schema.url="https://nxfilter.org/p3/" \
       org.label-schema.vendor="Jahastech" \
+      org.label-schema.vcs-url=$VCS_URL \
+      org.label-schema.vcs-ref=$VCS_REF
 RUN apk -U add openjdk8-jre curl unzip
 RUN curl $(printf ' -O http://nxfilter.org/download/nxfilter-%s.zip' $(cat version.txt)) && \
     cd / && \
