@@ -1,5 +1,7 @@
 FROM alpine:3.6
 ADD ./version.txt .
+LABEL org.label-schema.url="https://nxfilter.org/p3/" \
+      org.label-schema.vendor="Jahastec" \
 RUN apk -U add openjdk8-jre curl unzip
 RUN curl $(printf ' -O http://nxfilter.org/download/nxfilter-%s.zip' $(cat version.txt)) && \
     cd / && \
