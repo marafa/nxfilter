@@ -10,4 +10,4 @@
 
 **Creating a volatile container without persistent data, just for testing**
 
-```docker run -it --rm  --name nxf -p 53:53/udp -p 80:80 suportetikrn/nxfilter:4.3.2.2-alpine```
+```docker run -it --rm  --name nxf -p 53:53/udp -p 80:80 suportetikrn/nxfilter:latest-alpine```
