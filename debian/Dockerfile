@@ -2,7 +2,7 @@ FROM debian:stretch
 ADD ./version.txt .
 RUN apt update && \
     apt -y install openjdk-8-jre-headless curl unzip
-RUN curl $(printf ' -O http://nxfilter.org/download/nxfilter-%s.zip' $(cat version.txt)) && \
+RUN curl $(printf ' -O http://pub.nxfilter.org/nxfilter-%s.zip' $(cat version.txt)) && \
     cd / && \
     unzip $(printf 'nxfilter-%s.zip' $(cat version.txt)) -d /nxfilter && \
     rm $(printf 'nxfilter-%s.zip' $(cat version.txt)) && \
